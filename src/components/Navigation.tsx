@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Logo from './Logo';
 import { Button } from '@/components/ui/button';
+import { Menu, X, LogIn } from 'lucide-react';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,9 +35,9 @@ const Navigation: React.FC = () => {
 
   return (
     <header 
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed w-full z-50 transition-all duration-500 backdrop-blur-md ${
         isScrolled 
-          ? 'bg-white/90 backdrop-blur-sm shadow-md py-2' 
+          ? 'bg-white/80 shadow-md py-2' 
           : 'bg-transparent py-4'
       }`}
     >
@@ -50,67 +51,73 @@ const Navigation: React.FC = () => {
                 <a 
                   key={index}
                   href={item.href}
-                  className={`text-sm font-medium transition-colors ${
+                  className={`text-sm font-medium transition-colors relative group ${
                     isScrolled 
                       ? 'text-gray-700 hover:text-uninav-primary' 
                       : 'text-white hover:text-white/80'
                   }`}
                 >
                   {item.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-uninav-accent transition-all duration-300 group-hover:w-full"></span>
                 </a>
               ))}
             </nav>
             
             <Button 
-              className={`${
+              className={`group ${
                 isScrolled 
                   ? 'bg-uninav-primary hover:bg-uninav-primary/90 text-white' 
                   : 'bg-white hover:bg-white/90 text-uninav-primary'
               }`}
             >
+              <LogIn className="mr-2 h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               Sign Up
             </Button>
           </div>
           
           <button 
-            className="md:hidden z-20"
+            className="md:hidden z-20 p-2 rounded-full bg-uninav-primary/20 backdrop-blur-sm"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={isScrolled ? 'text-gray-900' : 'text-white'}>
-                <path d="M18 6 6 18"></path>
-                <path d="m6 6 12 12"></path>
-              </svg>
+              <X className={isScrolled ? 'text-gray-900' : 'text-white'} />
             ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={isScrolled ? 'text-gray-900' : 'text-white'}>
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-              </svg>
+              <Menu className={isScrolled ? 'text-gray-900' : 'text-white'} />
             )}
           </button>
           
           {/* Mobile Menu */}
-          <div className={`fixed inset-0 bg-uninav-primary z-10 transform transition-transform duration-300 ease-in-out ${
+          <div className={`fixed inset-0 bg-gradient-to-br from-uninav-primary to-uninav-secondary z-10 transform transition-transform duration-500 ease-in-out ${
             mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}>
-            <div className="flex flex-col h-full justify-center items-center">
-              <nav className="flex flex-col items-center space-y-6">
+            <div className="flex flex-col h-full justify-center items-center relative">
+              <div className="absolute top-5 right-5 z-20">
+                <button 
+                  className="p-2 rounded-full bg-white/10 backdrop-blur-sm"
+                  onClick={() => setMobileMenuOpen(false)}
+                  aria-label="Close menu"
+                >
+                  <X className="text-white" />
+                </button>
+              </div>
+              <nav className="flex flex-col items-center space-y-8">
                 {navItems.map((item, index) => (
                   <a 
                     key={index}
                     href={item.href}
-                    className="text-xl font-medium text-white hover:text-white/80 transition-colors"
+                    className="text-xl font-medium text-white hover:text-uninav-accent transition-colors relative group"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.label}
+                    <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
                   </a>
                 ))}
                 <Button 
-                  className="mt-8 bg-white hover:bg-white/90 text-uninav-primary"
+                  className="mt-8 bg-white hover:bg-white/90 text-uninav-primary px-8 py-6 h-auto"
                   onClick={() => setMobileMenuOpen(false)}
                 >
+                  <LogIn className="mr-2 h-4 w-4" />
                   Sign Up
                 </Button>
               </nav>

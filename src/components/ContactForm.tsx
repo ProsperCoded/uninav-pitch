@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
+import { Mail, Phone, MessageSquare, Send } from 'lucide-react';
 
 const ContactForm: React.FC = () => {
   const { toast } = useToast();
@@ -35,31 +36,48 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <section className="section-padding bg-white" id="contact">
+    <section className="section-padding relative overflow-hidden" id="contact">
+      {/* Background elements */}
+      <div className="absolute inset-0 overflow-hidden -z-10">
+        <div className="bg-uninav-primary/5 absolute top-0 right-0 h-64 w-64 rounded-full blur-3xl"></div>
+        <div className="bg-uninav-accent/5 absolute bottom-0 left-0 h-96 w-96 rounded-full blur-3xl"></div>
+      </div>
+      
       <div className="container mx-auto">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gradient">Get In Touch</h2>
-          <p className="text-lg text-center text-gray-600 mb-8">
-            Have questions or want to learn more about UniNav? Send us a message and we'll get back to you.
-          </p>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-gradient relative inline-block">
+              Get In Touch
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-uninav-primary to-uninav-accent rounded-full"></div>
+            </h2>
+            <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+              Have questions or want to learn more about UniNav? Send us a message and we'll get back to you.
+            </p>
+          </div>
           
-          <div className="bg-white rounded-xl shadow-md p-6 lg:p-8">
+          <div className="bg-white rounded-2xl shadow-xl p-6 lg:p-10 border border-gray-100 backdrop-blur-sm">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium text-gray-700">Subject</label>
+                <label htmlFor="subject" className="text-sm font-medium text-gray-700 flex items-center">
+                  <MessageSquare className="mr-2 h-4 w-4 text-uninav-primary" />
+                  Subject
+                </label>
                 <Input
                   id="subject"
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
                   placeholder="How can we help you?"
-                  className="w-full"
+                  className="w-full rounded-lg border-gray-200 focus:border-uninav-primary focus:ring-uninav-primary/20"
                   required
                 />
               </div>
               
               <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-gray-700">Email</label>
+                <label htmlFor="email" className="text-sm font-medium text-gray-700 flex items-center">
+                  <Mail className="mr-2 h-4 w-4 text-uninav-primary" />
+                  Email
+                </label>
                 <Input
                   id="email"
                   name="email"
@@ -67,20 +85,23 @@ const ContactForm: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="your@email.com"
-                  className="w-full"
+                  className="w-full rounded-lg border-gray-200 focus:border-uninav-primary focus:ring-uninav-primary/20"
                   required
                 />
               </div>
               
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-gray-700">Message</label>
+                <label htmlFor="message" className="text-sm font-medium text-gray-700 flex items-center">
+                  <MessageSquare className="mr-2 h-4 w-4 text-uninav-primary" />
+                  Message
+                </label>
                 <Textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Tell us how we can help..."
-                  className="w-full min-h-[150px]"
+                  className="w-full min-h-[150px] rounded-lg border-gray-200 focus:border-uninav-primary focus:ring-uninav-primary/20"
                   required
                 />
               </div>
@@ -89,42 +110,35 @@ const ContactForm: React.FC = () => {
                 <Button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className="bg-uninav-primary hover:bg-uninav-primary/90 text-white px-6 py-2"
+                  className="bg-gradient-to-r from-uninav-primary to-uninav-secondary hover:from-uninav-primary/90 hover:to-uninav-secondary/90 text-white px-6 py-6 h-auto rounded-xl transition-all duration-300 hover:shadow-lg flex items-center gap-2"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
+                  <Send className="h-4 w-4 ml-1" />
                 </Button>
               </div>
             </form>
           </div>
           
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div className="p-4">
-              <div className="bg-uninav-light w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-uninav-primary">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div className="p-6 rounded-xl bg-white shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+              <div className="bg-gradient-to-br from-uninav-primary to-uninav-secondary w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <Phone className="text-white h-6 w-6" />
               </div>
               <h4 className="font-semibold text-lg mb-1">Call Us</h4>
               <p className="text-gray-500">+234 123 4567 890</p>
             </div>
             
-            <div className="p-4">
-              <div className="bg-uninav-light w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-uninav-primary">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <path d="m22 6-10 7L2 6"/>
-                </svg>
+            <div className="p-6 rounded-xl bg-white shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+              <div className="bg-gradient-to-br from-uninav-primary to-uninav-secondary w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <Mail className="text-white h-6 w-6" />
               </div>
               <h4 className="font-semibold text-lg mb-1">Email Us</h4>
               <p className="text-gray-500">hello@uninav.com</p>
             </div>
             
-            <div className="p-4">
-              <div className="bg-uninav-light w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-uninav-primary">
-                  <path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z"/>
-                  <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/>
-                </svg>
+            <div className="p-6 rounded-xl bg-white shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+              <div className="bg-gradient-to-br from-uninav-primary to-uninav-secondary w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <MessageSquare className="text-white h-6 w-6" />
               </div>
               <h4 className="font-semibold text-lg mb-1">Live Chat</h4>
               <p className="text-gray-500">Available 9am - 5pm WAT</p>

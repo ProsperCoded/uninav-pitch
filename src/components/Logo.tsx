@@ -8,11 +8,12 @@ interface LogoProps {
 const Logo: React.FC<LogoProps> = ({ className }) => {
   return (
     <div className={`flex items-center ${className}`}>
-      <div className="bg-gradient-to-r from-uninav-primary to-uninav-secondary p-2 rounded-lg">
+      <div className="bg-gradient-to-r from-uninav-primary to-uninav-secondary p-2 rounded-lg shadow-lg relative overflow-hidden group">
+        <div className="absolute inset-0 bg-gradient-to-r from-uninav-accent/0 to-uninav-accent/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
-          width="24" 
-          height="24" 
+          width="28" 
+          height="28" 
           viewBox="0 0 24 24" 
           fill="none" 
           stroke="currentColor" 
@@ -25,7 +26,10 @@ const Logo: React.FC<LogoProps> = ({ className }) => {
           <path d="M8 8v8h8v-4.5A3.5 3.5 0 0 0 12.5 8H8z"/>
         </svg>
       </div>
-      <span className="text-2xl font-bold ml-2 text-gradient">UNINAV</span>
+      <div className="ml-2">
+        <span className="text-2xl font-bold text-gradient tracking-wider">UNINAV</span>
+        <div className="h-0.5 w-full bg-gradient-to-r from-uninav-primary to-uninav-accent rounded-full transform origin-left transition-all duration-300 group-hover:scale-x-110"></div>
+      </div>
     </div>
   );
 };

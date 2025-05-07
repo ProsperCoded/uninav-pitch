@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -81,14 +81,23 @@
 @layer base {
   * {
     @apply border-border;
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-background text-foreground font-poppins;
+    @apply bg-background text-foreground font-poppins antialiased overflow-x-hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-montserrat font-bold;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl mb-6 relative;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl lg:text-3xl mb-4;
   }
 }
 
@@ -102,11 +111,11 @@
   }
   
   .glass-card {
-    @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-md;
+    @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl transition-shadow duration-300;
   }
   
   .section-padding {
-    @apply py-16 px-4 md:px-8 lg:px-12;
+    @apply py-20 px-4 md:px-8 lg:px-12;
   }
   
   .gradient-bg {
@@ -126,19 +135,19 @@
   }
   
   .feature-card {
-    @apply p-6 rounded-xl shadow-md bg-white border border-gray-100 hover:border-uninav-secondary transition-all duration-300;
+    @apply p-6 rounded-xl shadow-md bg-white border border-gray-100 hover:border-uninav-secondary transition-all duration-300 hover:shadow-xl;
   }
   
   .problem-card {
-    @apply p-6 rounded-xl bg-white shadow-md border-l-4 border-uninav-primary;
+    @apply p-6 rounded-xl bg-white shadow-md border-l-4 border-uninav-primary hover:shadow-xl transition-shadow;
   }
   
   .solution-card {
-    @apply p-6 rounded-xl bg-white shadow-md border-l-4 border-uninav-accent;
+    @apply p-6 rounded-xl bg-white shadow-md border-l-4 border-uninav-accent hover:shadow-xl transition-shadow;
   }
   
   .step-card {
-    @apply p-5 rounded-lg bg-white shadow-md border border-gray-100 hover:border-uninav-secondary transition-all duration-300;
+    @apply p-5 rounded-lg bg-white shadow-md border border-gray-100 hover:border-uninav-secondary transition-all duration-300 hover:shadow-xl;
   }
   
   .roadmap-item {
@@ -151,5 +160,100 @@
   
   .roadmap-item:last-child {
     @apply border-l-0;
+  }
+
+  .animate-in {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+@layer utilities {
+  .animated-gradient {
+    background: linear-gradient(270deg, #4F46E5, #9B87F5, #F97316);
+    background-size: 600% 600%;
+    animation: gradient-animation 8s ease infinite;
+  }
+
+  .text-outline {
+    text-shadow: -1px -1px 0 rgba(255,255,255,0.15), 
+                 1px -1px 0 rgba(255,255,255,0.15), 
+                 -1px 1px 0 rgba(255,255,255,0.15), 
+                 1px 1px 0 rgba(255,255,255,0.15);
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .glassmorphism {
+    @apply backdrop-blur-md bg-white/10 border border-white/30;
+  }
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes float-delayed {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.03);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 7s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce 3s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-5%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
