@@ -1,103 +1,138 @@
-
-import React from 'react';
-import { Puzzle, Frown, Ban, Settings, Megaphone, CheckCircle, ArrowRight } from 'lucide-react';
+import React from "react";
+import {
+  Puzzle,
+  Frown,
+  Ban,
+  Settings,
+  Megaphone,
+  CheckCircle,
+  ArrowRight,
+} from "lucide-react";
 
 const ProblemSolution: React.FC = () => {
   const problems = [
     {
-      icon: <Puzzle className="h-6 w-6 text-uninav-primary" />,
-      title: 'Scattered & Unreliable Study Materials',
-      quote: '"I had to text three group chats, call a senior, and still didn\'t get last year\'s course outline."',
-      description: 'Students — especially newcomers — often have no central, reliable place to access essential academic resources. Materials are spread across group chats, random Google Drives, or worse — lost completely.',
+      icon: <Puzzle className="w-6 h-6 text-uninav-primary" />,
+      title: "Scattered & Unreliable Study Materials",
+      quote:
+        "\"I had to text three group chats, call a senior, and still didn't get last year's course outline.\"",
+      description:
+        "Students, especially newcomers, lack a central, reliable source for academic resources. Materials are often lost or spread across various platforms.",
       solutions: [
-        'Organized course materials by Faculty, Department, and Level.',
-        'Verified uploads, not random files from unknown sources.',
-        'Easily searchable with full-text and course-based filters.'
-      ]
+        "Organized materials by Faculty, Department, and Level.",
+        "Verified uploads, ensuring quality and relevance.",
+        "Easily searchable content with comprehensive filters.",
+      ],
     },
     {
-      icon: <Frown className="h-6 w-6 text-uninav-primary" />,
-      title: 'Academic Isolation for Fresh Students',
-      quote: '"I didn\'t even know what topics to expect in 200-level Data Structures."',
-      description: 'New students feel overwhelmed. No roadmaps, no proper handholding, just scattered whispers of advice — if they\'re lucky.',
+      icon: <Frown className="w-6 h-6 text-uninav-primary" />,
+      title: "Academic Isolation for Fresh Students",
+      quote:
+        '"I didn\'t even know what topics to expect in 200-level Data Structures."',
+      description:
+        "New students often feel overwhelmed due to a lack of clear guidance and accessible academic roadmaps.",
       solutions: [
-        'Student blogs where experienced students share guidance, tips, registration help, and learning hacks.',
-        'Allows seniors to give back and earn while helping others navigate the same academic maze they once faced.'
-      ]
+        "Student blogs for guidance, tips, and learning hacks.",
+        "Seniors can share knowledge, earn, and help others.",
+      ],
     },
     {
-      icon: <Ban className="h-6 w-6 text-uninav-primary" />,
-      title: 'Broken Promises from Campus Associations',
-      quote: '"The department said they\'ll upload past questions but… crickets."',
-      description: 'Even when materials are promised, they\'re rarely delivered consistently — and no one is held accountable.',
+      icon: <Ban className="w-6 h-6 text-uninav-primary" />,
+      title: "Broken Promises from Campus Associations",
+      quote:
+        '"The department said they\'ll upload past questions but… crickets."',
+      description:
+        "Promised materials are often undelivered, with no accountability, leaving students stranded.",
       solutions: [
-        'Transparent uploading system with contributor credits and engagement tracking.',
-        'Materials are public — no more gatekeeping or secrecy.',
-        'In the future, associations can use UniNav to earn trust by consistently delivering promised materials through an official channel.'
-      ]
+        "Transparent uploading with contributor credits.",
+        "Public materials, ending gatekeeping.",
+        "Future: Associations build trust via official channels.",
+      ],
     },
     {
-      icon: <Settings className="h-6 w-6 text-uninav-primary" />,
-      title: 'No Personalized Learning Guidance',
-      quote: '"I don\'t know what materials to read, and I keep downloading irrelevant ones."',
-      description: 'Students often waste time downloading unrelated or low-quality materials because there\'s no tailored system.',
+      icon: <Settings className="w-6 h-6 text-uninav-primary" />,
+      title: "No Personalized Learning Guidance",
+      quote:
+        '"I don\'t know what materials to read, and I keep downloading irrelevant ones."',
+      description:
+        "Students waste time on irrelevant materials due to a lack of tailored recommendations.",
       solutions: [
-        'Search ranking is smart — it prioritizes materials based on your level, department, and the courses you\'re taking.',
-        'Future features: AI-powered material recommendations and course planning assistants.'
-      ]
+        "Smart search ranking by level, department, and courses.",
+        "Future: AI recommendations and course planning.",
+      ],
     },
     {
-      icon: <Megaphone className="h-6 w-6 text-uninav-primary" />,
-      title: 'Unreachable Updates About School Life',
+      icon: <Megaphone className="w-6 h-6 text-uninav-primary" />,
+      title: "Unreachable Updates About School Life",
       quote: '"I only found out about that internship after the deadline."',
-      description: 'Most school updates — from department announcements to student-hosted events and niche internship opportunities — live and die in WhatsApp groups. If you\'re not in the right chat, you miss out.',
+      description:
+        "Crucial updates often get lost in WhatsApp groups, causing students to miss opportunities.",
       solutions: [
-        'A dedicated section for school updates, opportunities, and events.',
-        'Future roadmap: smart notifications so you never miss things that matter.'
-      ]
-    }
+        "Dedicated section for updates, opportunities, and events.",
+        "Future: Smart notifications for relevant information.",
+      ],
+    },
   ];
 
   return (
-    <section className="section-padding bg-gray-50" id="problems">
-      <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gradient">Problems & Solutions</h2>
-        <p className="text-lg text-center text-gray-600 mb-16 max-w-3xl mx-auto">
-          We identified these key challenges faced by university students and built UniNav to address them directly.
+    <section className="bg-gray-50 section-padding" id="problems">
+      <div className="mx-auto container">
+        <h2 className="mb-4 font-bold text-gradient text-3xl md:text-4xl text-center">
+          Problems & Solutions
+        </h2>
+        <p className="mx-auto mb-16 max-w-3xl text-gray-600 text-lg text-center">
+          UniNav addresses key student challenges with targeted solutions.
         </p>
-        
+
         <div className="space-y-16">
           {problems.map((problem, index) => (
-            <div key={index} className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-start relative ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-              <div className="problem-card animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
+            <div
+              key={index}
+              className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-start relative ${
+                index % 2 !== 0 ? "md:flex-row-reverse" : ""
+              }`}
+            >
+              <div
+                className="problem-card animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="p-2 rounded-lg bg-uninav-light text-uninav-primary">{problem.icon}</span>
-                  <h3 className="text-xl font-semibold text-uninav-dark">{problem.title}</h3>
+                  <span className="bg-uninav-light p-2 rounded-lg text-uninav-primary">
+                    {problem.icon}
+                  </span>
+                  <h3 className="font-semibold text-uninav-dark text-xl">
+                    {problem.title}
+                  </h3>
                 </div>
-                <blockquote className="bg-gray-100 p-4 rounded-lg italic text-gray-700 my-4 border-l-4 border-uninav-primary">
+                <blockquote className="bg-gray-100 my-4 p-4 border-uninav-primary border-l-4 rounded-lg text-gray-700 italic">
                   {problem.quote}
                 </blockquote>
                 <p className="text-gray-700">{problem.description}</p>
               </div>
-              
+
               {/* Connector - Visible on desktop */}
-              <div className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 items-center justify-center">
-                <div className="bg-white rounded-full p-2 shadow-lg">
-                  <ArrowRight className="h-6 w-6 text-uninav-accent" />
+              <div className="hidden top-1/2 left-1/2 z-10 absolute md:flex justify-center items-center -translate-x-1/2 -translate-y-1/2 transform">
+                <div className="bg-white shadow-lg p-2 rounded-full">
+                  <ArrowRight className="w-6 h-6 text-uninav-accent" />
                 </div>
               </div>
-              
-              <div className="solution-card animate-fade-in" style={{animationDelay: `${index * 0.1 + 0.2}s`}}>
+
+              <div
+                className="animate-fade-in solution-card"
+                style={{ animationDelay: `${index * 0.1 + 0.2}s` }}
+              >
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="p-2 rounded-lg bg-uninav-light text-uninav-accent">
-                    <CheckCircle className="h-6 w-6" />
+                  <span className="bg-uninav-light p-2 rounded-lg text-uninav-accent">
+                    <CheckCircle className="w-6 h-6" />
                   </span>
-                  <h3 className="text-xl font-semibold text-uninav-dark">How UniNav Solves This</h3>
+                  <h3 className="font-semibold text-uninav-dark text-xl">
+                    How UniNav Solves This
+                  </h3>
                 </div>
                 <ul className="space-y-2">
                   {problem.solutions.map((solution, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-uninav-accent mt-1 flex-shrink-0" />
+                      <CheckCircle className="flex-shrink-0 mt-1 w-5 h-5 text-uninav-accent" />
                       <span>{solution}</span>
                     </li>
                   ))}
@@ -106,10 +141,10 @@ const ProblemSolution: React.FC = () => {
             </div>
           ))}
         </div>
-        
-        <div className="mt-16 p-6 rounded-xl bg-gradient-to-r from-uninav-primary to-uninav-secondary text-white text-center">
-          <p className="text-xl italic font-medium">
-            "UniNav was born out of our own frustration. Now, it's the tool we wish we had when we first walked into the university gates."
+
+        <div className="bg-gradient-to-r from-uninav-primary to-uninav-secondary mt-16 p-6 rounded-xl text-white text-center">
+          <p className="font-medium text-xl italic">
+            "Born from our frustrations, UniNav is the tool we wished we had."
           </p>
         </div>
       </div>

@@ -111,8 +111,8 @@ const Competition: React.FC = () => {
             <div className="right-0 -bottom-2 left-0 absolute bg-gradient-to-r from-uninav-primary to-uninav-accent rounded-full h-1"></div>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-gray-600 text-lg">
-            UniNav offers a unique solution for Nigerian University students,
-            with few direct competitors.
+            UniNav offers a unique, tailored solution for Nigerian University
+            students, facing few direct competitors.
           </p>
         </div>
 
@@ -198,9 +198,8 @@ const Competition: React.FC = () => {
             What Makes Us Different
           </h3>
           <p className="text-lg">
-            UniNav integrates academic resources, community features, and
-            monetization into a single platform tailored for Nigerian university
-            students.
+            UniNav uniquely integrates academic resources, community features,
+            and monetization, specifically for Nigerian university students.
           </p>
 
           <div className="gap-6 grid grid-cols-1 md:grid-cols-3 mt-8">
@@ -212,7 +211,7 @@ const Competition: React.FC = () => {
                 All-in-One Platform
               </h4>
               <p className="text-white/90">
-                Combines resources, blogs, and community in one ecosystem.
+                Combines resources, blogs, and community.
               </p>
             </div>
 
@@ -220,11 +219,9 @@ const Competition: React.FC = () => {
               <div className="mb-3 text-3xl group-hover:scale-110 transition-transform">
                 <GraduationCap className="w-8 h-8 text-white" />
               </div>
-              <h4 className="mb-2 font-semibold text-xl">
-                Built for Nigerian Context
-              </h4>
+              <h4 className="mb-2 font-semibold text-xl">Nigerian Context</h4>
               <p className="text-white/90">
-                Tailored to address challenges in Nigerian universities.
+                Tailored for Nigerian university challenges.
               </p>
             </div>
 
@@ -232,11 +229,9 @@ const Competition: React.FC = () => {
               <div className="mb-3 text-3xl group-hover:scale-110 transition-transform">
                 <Brain className="w-8 h-8 text-white" />
               </div>
-              <h4 className="mb-2 font-semibold text-xl">
-                Student-First Innovation
-              </h4>
+              <h4 className="mb-2 font-semibold text-xl">Student-First</h4>
               <p className="text-white/90">
-                Designed around real student needs and workflows.
+                Designed around real student needs.
               </p>
             </div>
           </div>

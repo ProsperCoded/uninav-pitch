@@ -6,25 +6,25 @@ const TargetUsers: React.FC = () => {
       icon: "🎓",
       title: "University Students",
       description:
-        "Undergraduates and postgraduates seeking organized academic resources, peer support, and a centralized platform for materials and knowledge sharing.",
+        "Seeking organized academic resources, peer support, and a centralized platform for knowledge sharing.",
     },
     {
       icon: "🆕",
       title: "Freshmen",
       description:
-        "New students needing guidance in new academic environments. UniNav offers support via blogs, curated materials, and a welcoming community for quick adaptation and academic success.",
+        "Need guidance in new academic environments. UniNav offers support for quick adaptation and success.",
     },
     {
       icon: "👥",
       title: "Student Associations",
       description:
-        "Groups needing a platform to share information and materials. UNINAV helps them efficiently communicate with members and provide essential resources.",
+        "Require a platform to efficiently share information and materials with members.",
     },
     {
       icon: "👨‍🏫",
       title: "Educators",
       description:
-        "Lecturers and professors can use UNINAV to distribute verified course materials, announcements, and updates, ensuring students access accurate information.",
+        "Can use UNINAV to distribute verified course materials and updates, ensuring students access accurate info.",
     },
   ];
 
@@ -33,25 +33,25 @@ const TargetUsers: React.FC = () => {
       icon: "📈",
       title: "Enhanced Academic Performance",
       description:
-        "Easy access to relevant materials boosts study efficiency and improves grades by providing a centralized, organized resource platform.",
+        "Easy access to relevant materials boosts study efficiency and improves grades.",
     },
     {
       icon: "🤝",
       title: "Community Building",
       description:
-        "Blogs and shared resources foster a collaborative learning environment, connecting students and enhancing the university experience.",
+        "Blogs and shared resources foster collaboration, connecting students and enhancing university experience.",
     },
     {
       icon: "🚪",
       title: "Increased Opportunities",
       description:
-        "Centralized updates on events and internships help students build careers and achieve professional goals.",
+        "Centralized updates on events and internships help students build careers.",
     },
     {
       icon: "💪",
       title: "Empowerment",
       description:
-        "Students can contribute, monetize their knowledge, and build a reputation, promoting a culture of sharing and support.",
+        "Students can contribute, monetize knowledge, and build reputation, promoting sharing and support.",
     },
   ];
 
@@ -63,8 +63,8 @@ const TargetUsers: React.FC = () => {
             Target Users & Impact
           </h2>
           <p className="mx-auto max-w-3xl text-gray-600 text-lg">
-            UNINAV serves the academic community, aiming to revolutionize how
-            students access and share resources.
+            UNINAV serves the academic community, revolutionizing student
+            resource access and sharing.
           </p>
         </div>
 

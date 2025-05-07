@@ -45,7 +45,7 @@ const BusinessModel: React.FC = () => {
           Business Model
         </h2>
         <p className="mx-auto mb-16 max-w-3xl text-gray-600 text-lg text-center">
-          Our sustainable model creates student value and a viable business.
+          Our model creates student value and ensures business viability.
         </p>
 
         <div className="bg-white shadow-md mb-12 p-6 rounded-xl">
@@ -53,12 +53,10 @@ const BusinessModel: React.FC = () => {
             Market Opportunity
           </h3>
           <p className="mb-4 text-gray-700">
-            Nigeria has <span className="font-bold">283</span> universities for
-            a population of over <span className="font-bold">200 million</span>,
-            yet faces a significant shortfall in undergraduate enrollment
-            capacity (around <span className="font-bold">875,000</span> spots
-            for <span className="font-bold">1.5 million+</span> annual
-            applicants).
+            Nigeria has <span className="font-bold">283</span> universities for{" "}
+            <span className="font-bold">200M+</span> people, with an{" "}
+            <span className="font-bold">~875K</span> enrollment capacity vs.{" "}
+            <span className="font-bold">1.5M+</span> applicants annually.
           </p>
 
           <div className="bg-gray-50 my-4 p-4 border-uninav-secondary border-l-4 rounded-lg">
@@ -77,11 +75,9 @@ const BusinessModel: React.FC = () => {
 
           <div className="bg-uninav-light p-4 rounded-lg">
             <p className="text-gray-700">
-              <span className="font-bold">Key Insight:</span> This disparity
-              highlights students' struggle for academic resources and peer
-              support. UniNav addresses this by centralizing resource sharing
-              and collaboration, serving a vast market across Nigeria's
-              universities.
+              <span className="font-bold">Key Insight:</span> This gap
+              highlights students' need for academic resources and support.
+              UniNav centralizes resource sharing for this vast market.
             </p>
           </div>
         </div>
@@ -96,9 +92,9 @@ const BusinessModel: React.FC = () => {
               Native Ads
             </h4>
             <p className="text-gray-600">
-              Students can pay to display more ads per material or replace
-              existing ones—ideal for student campaigns needing wider political
-              awareness. (Currently: 1 free ad/material, non-replaceable).
+              Students pay for more/replaceable ads per material, ideal for
+              campaigns needing wider awareness. (Currently: 1 free
+              ad/material).
             </p>
           </div>
 
@@ -108,9 +104,8 @@ const BusinessModel: React.FC = () => {
               Premium Features
             </h4>
             <p className="text-gray-600">
-              Paid enhancements like an in-app PDF reader with AI Q&A, sticky
-              notes, quiz generation, AI study plans, and advanced progress
-              analytics.
+              Paid tools: AI-powered PDF Q&A, sticky notes, quiz generation, AI
+              study plans, advanced analytics.
             </p>
           </div>
 
@@ -120,9 +115,9 @@ const BusinessModel: React.FC = () => {
               Targeted Ads & Sponsors
             </h4>
             <p className="text-gray-600">
-              Organizations can feature ads in search results for better
-              visibility. Partners include student-focused businesses,
-              educational services, and event organizers.
+              Organizations feature ads in search results. Partners:
+              student-focused businesses, educational services, event
+              organizers.
             </p>
           </div>
         </div>
@@ -212,16 +207,16 @@ const BusinessModel: React.FC = () => {
 
           <div className="mt-6 text-gray-500 text-sm">
             <p>
-              <span className="font-semibold">2025:</span> 1K users, 10% (100)
-              buy native ads (₦2K each).
+              <span className="font-semibold">2025:</span> 1K users; 10% (100)
+              buy native ads (₦2K ea).
             </p>
             <p>
-              <span className="font-semibold">2026:</span> 2K users, 200 native
-              ads, 200 premium subs (₦1K/mo), 200 targeted ads (₦5K each).
+              <span className="font-semibold">2026:</span> 2K users; 200 native
+              ads, 200 premium (₦1K/mo), 200 targeted ads (₦5K ea).
             </p>
             <p>
-              <span className="font-semibold">2027:</span> 3K users, 300 native
-              ads, 300 premium subs, 400 targeted ads.
+              <span className="font-semibold">2027:</span> 3K users; 300 native
+              ads, 300 premium, 400 targeted ads.
             </p>
           </div>
         </div>
