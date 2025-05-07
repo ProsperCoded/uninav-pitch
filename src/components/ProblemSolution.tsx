@@ -1,10 +1,11 @@
 
 import React from 'react';
+import { Puzzle, Frown, Ban, Settings, Megaphone, CheckCircle, ArrowRight } from 'lucide-react';
 
 const ProblemSolution: React.FC = () => {
   const problems = [
     {
-      emoji: '🧩',
+      icon: <Puzzle className="h-6 w-6 text-uninav-primary" />,
       title: 'Scattered & Unreliable Study Materials',
       quote: '"I had to text three group chats, call a senior, and still didn\'t get last year\'s course outline."',
       description: 'Students — especially newcomers — often have no central, reliable place to access essential academic resources. Materials are spread across group chats, random Google Drives, or worse — lost completely.',
@@ -15,7 +16,7 @@ const ProblemSolution: React.FC = () => {
       ]
     },
     {
-      emoji: '😓',
+      icon: <Frown className="h-6 w-6 text-uninav-primary" />,
       title: 'Academic Isolation for Fresh Students',
       quote: '"I didn\'t even know what topics to expect in 200-level Data Structures."',
       description: 'New students feel overwhelmed. No roadmaps, no proper handholding, just scattered whispers of advice — if they\'re lucky.',
@@ -25,7 +26,7 @@ const ProblemSolution: React.FC = () => {
       ]
     },
     {
-      emoji: '🚫',
+      icon: <Ban className="h-6 w-6 text-uninav-primary" />,
       title: 'Broken Promises from Campus Associations',
       quote: '"The department said they\'ll upload past questions but… crickets."',
       description: 'Even when materials are promised, they\'re rarely delivered consistently — and no one is held accountable.',
@@ -36,7 +37,7 @@ const ProblemSolution: React.FC = () => {
       ]
     },
     {
-      emoji: '⚙️',
+      icon: <Settings className="h-6 w-6 text-uninav-primary" />,
       title: 'No Personalized Learning Guidance',
       quote: '"I don\'t know what materials to read, and I keep downloading irrelevant ones."',
       description: 'Students often waste time downloading unrelated or low-quality materials because there\'s no tailored system.',
@@ -46,7 +47,7 @@ const ProblemSolution: React.FC = () => {
       ]
     },
     {
-      emoji: '📢',
+      icon: <Megaphone className="h-6 w-6 text-uninav-primary" />,
       title: 'Unreachable Updates About School Life',
       quote: '"I only found out about that internship after the deadline."',
       description: 'Most school updates — from department announcements to student-hosted events and niche internship opportunities — live and die in WhatsApp groups. If you\'re not in the right chat, you miss out.',
@@ -67,10 +68,10 @@ const ProblemSolution: React.FC = () => {
         
         <div className="space-y-16">
           {problems.map((problem, index) => (
-            <div key={index} className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-start ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
+            <div key={index} className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-start relative ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
               <div className="problem-card animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-3xl">{problem.emoji}</span>
+                  <span className="p-2 rounded-lg bg-uninav-light text-uninav-primary">{problem.icon}</span>
                   <h3 className="text-xl font-semibold text-uninav-dark">{problem.title}</h3>
                 </div>
                 <blockquote className="bg-gray-100 p-4 rounded-lg italic text-gray-700 my-4 border-l-4 border-uninav-primary">
@@ -79,29 +80,28 @@ const ProblemSolution: React.FC = () => {
                 <p className="text-gray-700">{problem.description}</p>
               </div>
               
+              {/* Connector - Visible on desktop */}
+              <div className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 items-center justify-center">
+                <div className="bg-white rounded-full p-2 shadow-lg">
+                  <ArrowRight className="h-6 w-6 text-uninav-accent" />
+                </div>
+              </div>
+              
               <div className="solution-card animate-fade-in" style={{animationDelay: `${index * 0.1 + 0.2}s`}}>
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-3xl">✅</span>
+                  <span className="p-2 rounded-lg bg-uninav-light text-uninav-accent">
+                    <CheckCircle className="h-6 w-6" />
+                  </span>
                   <h3 className="text-xl font-semibold text-uninav-dark">How UniNav Solves This</h3>
                 </div>
                 <ul className="space-y-2">
                   {problem.solutions.map((solution, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-uninav-accent mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                      <CheckCircle className="w-5 h-5 text-uninav-accent mt-1 flex-shrink-0" />
                       <span>{solution}</span>
                     </li>
                   ))}
                 </ul>
-              </div>
-              
-              {/* Connector (visible on desktop) */}
-              <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-12 h-8">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-uninav-primary mx-auto">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
               </div>
             </div>
           ))}

@@ -1,19 +1,19 @@
 
 import React from 'react';
-import { CheckCircle, XCircle, CheckCircle2 } from 'lucide-react';
+import { CheckCircle, XCircle, CheckCircle2, Target, BookOpen, GraduationCap, Brain, FileText, MessagesSquare, Compass, Briefcase, Search, Smartphone } from 'lucide-react';
 
 const Competition: React.FC = () => {
   const features = [
-    { icon: '🎯', label: 'Targets University Students' },
-    { icon: '📚', label: 'Access to Past Questions & Materials' },
-    { icon: '🎓', label: 'Course & Department-Based Organization' },
-    { icon: '🧠', label: 'Personalized Content by Level & Course' },
-    { icon: '📝', label: 'Community Blog System' },
-    { icon: '💬', label: 'Peer-Generated Content' },
-    { icon: '🧭', label: 'Event & Opportunity Awareness' },
-    { icon: '💼', label: 'Monetization via Native Adverts' },
-    { icon: '🔍', label: 'Powerful Filtered Search' },
-    { icon: '📱', label: 'Modern, Student-Friendly Dashboard' }
+    { icon: <Target className="h-5 w-5 text-uninav-primary" />, label: 'Targets University Students' },
+    { icon: <BookOpen className="h-5 w-5 text-uninav-primary" />, label: 'Access to Past Questions & Materials' },
+    { icon: <GraduationCap className="h-5 w-5 text-uninav-primary" />, label: 'Course & Department-Based Organization' },
+    { icon: <Brain className="h-5 w-5 text-uninav-primary" />, label: 'Personalized Content by Level & Course' },
+    { icon: <FileText className="h-5 w-5 text-uninav-primary" />, label: 'Community Blog System' },
+    { icon: <MessagesSquare className="h-5 w-5 text-uninav-primary" />, label: 'Peer-Generated Content' },
+    { icon: <Compass className="h-5 w-5 text-uninav-primary" />, label: 'Event & Opportunity Awareness' },
+    { icon: <Briefcase className="h-5 w-5 text-uninav-primary" />, label: 'Monetization via Native Adverts' },
+    { icon: <Search className="h-5 w-5 text-uninav-primary" />, label: 'Powerful Filtered Search' },
+    { icon: <Smartphone className="h-5 w-5 text-uninav-primary" />, label: 'Modern, Student-Friendly Dashboard' }
   ];
 
   const competitors = [
@@ -47,25 +47,20 @@ const Competition: React.FC = () => {
             <table className="min-w-full divide-y divide-gray-200">
               <thead>
                 <tr className="bg-gray-50 text-left">
-                  <th scope="col" className="px-6 py-4 text-xs font-medium text-gray-500 uppercase tracking-wider rounded-tl-lg">
+                  <th scope="col" className="px-6 py-4 text-xs font-medium text-gray-500 uppercase tracking-wider rounded-tl-lg whitespace-nowrap">
                     Feature / Platform
                   </th>
                   {competitors.map((competitor, i) => (
                     <th 
                       key={i} 
                       scope="col" 
-                      className={`px-6 py-4 text-left text-xs font-medium uppercase tracking-wider ${
+                      className={`px-6 py-4 text-left text-xs font-medium uppercase tracking-wider whitespace-nowrap ${
                         competitor.name === 'UniNav' 
                           ? 'bg-uninav-primary/10 text-uninav-primary' 
                           : 'text-gray-500'
                       } ${i === competitors.length - 1 ? 'rounded-tr-lg' : ''}`}
                     >
-                      <div className="flex items-center">
-                        {competitor.name}
-                        {competitor.name === 'UniNav' && (
-                          <span className="ml-1 bg-uninav-accent text-white text-xs px-1 py-0.5 rounded">Winner</span>
-                        )}
-                      </div>
+                      {competitor.name}
                     </th>
                   ))}
                 </tr>
@@ -73,8 +68,8 @@ const Competition: React.FC = () => {
               <tbody className="bg-white divide-y divide-gray-200">
                 {features.map((feature, i) => (
                   <tr key={i} className={i % 2 === 0 ? 'bg-white hover:bg-gray-50' : 'bg-gray-50 hover:bg-gray-100'}>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 flex items-center">
-                      <span className="text-xl mr-2">{feature.icon}</span>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 flex items-center gap-2">
+                      {feature.icon}
                       {feature.label}
                     </td>
                     {competitors.map((competitor, j) => (
@@ -116,7 +111,7 @@ const Competition: React.FC = () => {
         
         <div className="bg-gradient-to-r from-uninav-primary to-uninav-secondary text-white p-8 rounded-2xl shadow-xl">
           <h3 className="text-2xl font-semibold mb-4 flex items-center">
-            <span className="mr-2">⭐</span>
+            <Target className="h-6 w-6 mr-2" />
             What Makes Us Different
           </h3>
           <p className="text-lg">
@@ -126,19 +121,25 @@ const Competition: React.FC = () => {
           
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-colors group">
-              <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">🔄</div>
+              <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">
+                <Target className="h-8 w-8 text-white" />
+              </div>
               <h4 className="text-xl font-semibold mb-2">All-in-One Platform</h4>
               <p className="text-white/90">Combining resources, blogs, and community in a single integrated ecosystem</p>
             </div>
             
             <div className="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-colors group">
-              <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">🎯</div>
+              <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">
+                <GraduationCap className="h-8 w-8 text-white" />
+              </div>
               <h4 className="text-xl font-semibold mb-2">Built for Nigerian Context</h4>
               <p className="text-white/90">Designed specifically for the unique challenges of Nigerian universities</p>
             </div>
             
             <div className="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-colors group">
-              <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">💡</div>
+              <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">
+                <Brain className="h-8 w-8 text-white" />
+              </div>
               <h4 className="text-xl font-semibold mb-2">Student-First Innovation</h4>
               <p className="text-white/90">Every feature is built around actual student workflows and needs</p>
             </div>

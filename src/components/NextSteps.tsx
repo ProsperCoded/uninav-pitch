@@ -1,12 +1,14 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Rocket, Check, Clock, CircleDot } from 'lucide-react';
 
 const NextSteps: React.FC = () => {
   const phases = [
     {
       name: 'Phase 1 – Core MVP',
       status: 'Completed',
+      icon: <Check className="h-5 w-5" />,
       items: [
         'User registration & department-level onboarding',
         'Material upload system (PDFs, images, etc.)',
@@ -19,6 +21,7 @@ const NextSteps: React.FC = () => {
     {
       name: 'Phase 2 – Refinement & Growth',
       status: 'In Progress',
+      icon: <Clock className="h-5 w-5" />,
       items: [
         'Contributor credibility scores',
         'Blog review & curation system',
@@ -29,6 +32,7 @@ const NextSteps: React.FC = () => {
     {
       name: 'Phase 3 – Awareness & Events',
       status: 'Upcoming',
+      icon: <CircleDot className="h-5 w-5" />,
       items: [
         'University-wide announcement board',
         'Internship & event listings by ambassadors',
@@ -39,6 +43,7 @@ const NextSteps: React.FC = () => {
     {
       name: 'Phase 4 – Scale & Monetization',
       status: 'Future',
+      icon: <CircleDot className="h-5 w-5" />,
       items: [
         'Multi-university support',
         'In-app ad payment & campaign system',
@@ -76,16 +81,16 @@ const NextSteps: React.FC = () => {
         </div>
         
         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-12">
-          <h3 className="text-2xl font-semibold text-white mb-6 flex items-center">
-            <span className="text-3xl mr-2">🚀</span> 
-            UniNav Roadmap
-          </h3>
+          <div className="flex items-center justify-center mb-6">
+            <Rocket className="h-6 w-6 text-white mr-2" />
+            <h3 className="text-2xl font-semibold text-white">UniNav Roadmap</h3>
+          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {phases.map((phase, index) => (
               <div 
                 key={index} 
-                className={`rounded-lg p-5 ${
+                className={`rounded-lg p-5 transition-all duration-300 transform hover:-translate-y-2 ${
                   phase.status === 'Completed' ? 'bg-white/20' :
                   phase.status === 'In Progress' ? 'bg-uninav-accent/50' :
                   'bg-white/10'
@@ -93,34 +98,30 @@ const NextSteps: React.FC = () => {
               >
                 <div className="flex justify-between items-center mb-4">
                   <h4 className="font-semibold text-white text-lg">{phase.name}</h4>
-                  <span className={`text-xs px-2 py-1 rounded-full ${
+                  <span className={`text-xs px-3 py-1.5 rounded-full flex items-center gap-1 ${
                     phase.status === 'Completed' ? 'bg-green-500 text-white' :
                     phase.status === 'In Progress' ? 'bg-yellow-500 text-white' :
                     'bg-white/20 text-white'
                   }`}>
+                    {phase.icon}
                     {phase.status}
                   </span>
                 </div>
                 
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {phase.items.map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-white/90 text-sm">
-                      <svg 
-                        className={`w-5 h-5 mt-0.5 flex-shrink-0 ${
-                          phase.status === 'Completed' ? 'text-green-300' :
-                          phase.status === 'In Progress' && i < 2 ? 'text-yellow-300' :
-                          'text-white/50'
-                        }`}
-                        fill="none" 
-                        viewBox="0 0 24 24" 
-                        stroke="currentColor"
-                      >
+                      <div className={`mt-0.5 flex-shrink-0 ${
+                        phase.status === 'Completed' ? 'text-green-300' :
+                        phase.status === 'In Progress' && i < 2 ? 'text-yellow-300' :
+                        'text-white/50'
+                      }`}>
                         {phase.status === 'Completed' ? (
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          <Check className="h-4 w-4" />
                         ) : (
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          <CircleDot className="h-4 w-4" />
                         )}
-                      </svg>
+                      </div>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -130,8 +131,9 @@ const NextSteps: React.FC = () => {
           </div>
         </div>
         
-        <div className="flex justify-center mb-8">
-          <Button className="bg-uninav-accent hover:bg-uninav-accent/80 text-white px-8 py-6 rounded-xl text-lg">
+        <div className="flex justify-center mb-8 animate-pulse-slow">
+          <Button className="bg-uninav-accent hover:bg-uninav-accent/80 text-white px-8 py-6 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <Rocket className="mr-2 h-5 w-5" />
             Get Early Access
           </Button>
         </div>

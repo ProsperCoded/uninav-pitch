@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Check, Clock, School, Users, Smartphone, Target, Rocket } from 'lucide-react';
 
 const Traction: React.FC = () => {
   const milestones = [
@@ -22,27 +23,27 @@ const Traction: React.FC = () => {
 
   const marketingStrategies = [
     {
-      icon: '🏫',
+      icon: <School className="w-6 h-6 text-uninav-primary" />,
       title: 'Campus Ambassador Program',
       description: 'Recruiting enthusiastic students from each university to champion UNINAV on campus, organize awareness events, and gather initial content.'
     },
     {
-      icon: '👥',
+      icon: <Users className="w-6 h-6 text-uninav-primary" />,
       title: 'Student Association Partnerships',
       description: 'Collaborating with departmental associations to promote the platform and contribute verified academic content.'
     },
     {
-      icon: '📱',
+      icon: <Smartphone className="w-6 h-6 text-uninav-primary" />,
       title: 'Mobile-First Approach',
       description: 'Recognizing that most Nigerian students access the internet via mobile phones, our platform is optimized for mobile devices first.'
     },
     {
-      icon: '🎯',
+      icon: <Target className="w-6 h-6 text-uninav-primary" />,
       title: 'Targeted Social Media Campaigns',
       description: 'Leveraging platforms popular among Nigerian students like WhatsApp, Instagram, and Twitter for targeted awareness campaigns.'
     },
     {
-      icon: '🚀',
+      icon: <Rocket className="w-6 h-6 text-uninav-primary" />,
       title: 'Phased University Rollout',
       description: 'Starting with key universities in major cities before expanding nationwide to ensure quality service and build reliable reputation.'
     }
@@ -58,7 +59,7 @@ const Traction: React.FC = () => {
               We've made significant progress in bringing UNINAV to life, with key milestones achieved and more on the horizon.
             </p>
             
-            <div className="bg-white rounded-xl shadow-md p-6">
+            <div className="bg-white rounded-xl shadow-md p-6 transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <h3 className="text-2xl font-semibold text-uninav-primary mb-6">Key Milestones</h3>
               
               <div className="space-y-8 relative">
@@ -66,11 +67,16 @@ const Traction: React.FC = () => {
                   <div key={index} className="roadmap-item">
                     <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
                       <h4 className="text-lg font-semibold text-uninav-dark">{milestone.title}</h4>
-                      <span className={`text-sm px-3 py-1 rounded-full ${
+                      <span className={`text-sm px-3 py-1 rounded-full inline-flex items-center gap-1 ${
                         milestone.status === 'Completed' 
                           ? 'bg-green-100 text-green-800' 
                           : 'bg-amber-100 text-amber-800'
                       }`}>
+                        {milestone.status === 'Completed' ? (
+                          <Check className="h-3.5 w-3.5" />
+                        ) : (
+                          <Clock className="h-3.5 w-3.5" />
+                        )}
                         {milestone.status}
                       </span>
                     </div>
@@ -87,13 +93,15 @@ const Traction: React.FC = () => {
               Our tailored approach for successfully introducing UNINAV to the Nigerian university ecosystem.
             </p>
             
-            <div className="bg-white rounded-xl shadow-md p-6">
+            <div className="bg-white rounded-xl shadow-md p-6 transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <div className="space-y-6">
                 {marketingStrategies.map((strategy, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <div className="text-3xl p-2 bg-uninav-light rounded-lg">{strategy.icon}</div>
+                  <div key={index} className="flex items-start gap-4 group">
+                    <div className="p-2 bg-uninav-light rounded-lg group-hover:bg-uninav-primary/10 transition-colors">
+                      {strategy.icon}
+                    </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-uninav-dark mb-1">{strategy.title}</h4>
+                      <h4 className="text-lg font-semibold text-uninav-dark mb-1 group-hover:text-uninav-primary transition-colors">{strategy.title}</h4>
                       <p className="text-gray-600">{strategy.description}</p>
                     </div>
                   </div>
@@ -101,12 +109,14 @@ const Traction: React.FC = () => {
               </div>
               
               <div className="mt-8 p-4 bg-uninav-light rounded-lg">
-                <h4 className="text-lg font-semibold text-uninav-primary mb-2">Localization Focus</h4>
+                <h4 className="text-lg font-semibold text-uninav-primary mb-2 flex items-center">
+                  <Target className="w-4 h-4 mr-2" />
+                  Localization Focus
+                </h4>
                 <p className="text-gray-700">
                   We recognize the unique challenges of the Nigerian educational ecosystem. Our platform is specifically 
                   designed to address local connectivity issues, provide data-saving options, and support academic structures 
-                  specific to Nigerian universities. By building for our local context first, we ensure UNINAV truly meets 
-                  the needs of Nigerian students.
+                  specific to Nigerian universities.
                 </p>
               </div>
             </div>
