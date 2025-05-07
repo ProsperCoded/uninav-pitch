@@ -1,113 +1,137 @@
-
-import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import React from "react";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
 const BusinessModel: React.FC = () => {
   const financialData = [
-    { 
-      year: '2025', 
-      users: 1000, 
-      nativeAds: 100 * 2000, 
-      premium: 0, 
+    {
+      year: "2025",
+      users: 1000,
+      nativeAds: 100 * 2000,
+      premium: 0,
       targetedAds: 0,
-      total: 100 * 2000
+      total: 100 * 2000,
     },
-    { 
-      year: '2026', 
-      users: 2000, 
-      nativeAds: 200 * 2000, 
-      premium: 200 * 1000 * 12, 
+    {
+      year: "2026",
+      users: 2000,
+      nativeAds: 200 * 2000,
+      premium: 200 * 1000 * 12,
       targetedAds: 200 * 5000,
-      total: (200 * 2000) + (200 * 1000 * 12) + (200 * 5000)
+      total: 200 * 2000 + 200 * 1000 * 12 + 200 * 5000,
     },
-    { 
-      year: '2027', 
-      users: 3000, 
-      nativeAds: 300 * 2000, 
-      premium: 300 * 1000 * 12, 
+    {
+      year: "2027",
+      users: 3000,
+      nativeAds: 300 * 2000,
+      premium: 300 * 1000 * 12,
       targetedAds: 400 * 5000,
-      total: (300 * 2000) + (300 * 1000 * 12) + (400 * 5000)
-    }
+      total: 300 * 2000 + 300 * 1000 * 12 + 400 * 5000,
+    },
   ];
 
   return (
-    <section className="section-padding bg-gray-50" id="business-model">
-      <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gradient">Business Model</h2>
-        <p className="text-lg text-center text-gray-600 mb-16 max-w-3xl mx-auto">
-          A sustainable approach to creating value for students while building a viable business.
+    <section className="bg-gray-50 section-padding" id="business-model">
+      <div className="mx-auto container">
+        <h2 className="mb-4 font-bold text-gradient text-3xl md:text-4xl text-center">
+          Business Model
+        </h2>
+        <p className="mx-auto mb-16 max-w-3xl text-gray-600 text-lg text-center">
+          Our sustainable model creates student value and a viable business.
         </p>
-        
-        <div className="bg-white rounded-xl shadow-md p-6 mb-12">
-          <h3 className="text-2xl font-semibold text-uninav-primary mb-4">Market Opportunity</h3>
-          <p className="text-gray-700 mb-4">
-            As of March 2025, Nigeria has <span className="font-bold">283</span> universities (63 federal, 63 state, and 149 private). 
-            The National Universities Commission (NUC) has stated that the current number of universities is 
-            <span className="font-bold"> inadequate</span> for the country's over <span className="font-bold">200 million</span> population, 
-            with over <span className="font-bold">1.5 million</span> candidates seeking university admission annually. 
-            However, the total undergraduate enrollment capacity across these institutions is significantly lower, 
-            estimated to be around <span className="font-bold">875,000</span>.
+
+        <div className="bg-white shadow-md mb-12 p-6 rounded-xl">
+          <h3 className="mb-4 font-semibold text-uninav-primary text-2xl">
+            Market Opportunity
+          </h3>
+          <p className="mb-4 text-gray-700">
+            Nigeria has <span className="font-bold">283</span> universities for
+            a population of over <span className="font-bold">200 million</span>,
+            yet faces a significant shortfall in undergraduate enrollment
+            capacity (around <span className="font-bold">875,000</span> spots
+            for <span className="font-bold">1.5 million+</span> annual
+            applicants).
           </p>
-          
-          <div className="my-4 p-4 bg-gray-50 rounded-lg border-l-4 border-uninav-secondary">
-            <p className="text-sm text-gray-600">
-              <span className="font-bold">Source:</span> <a href="https://businessday.ng/editorial/article/n-assemblys-200-new-varsities-dream-amid-lecturers-shortage/" className="text-uninav-primary hover:underline" target="_blank" rel="noopener noreferrer">
+
+          <div className="bg-gray-50 my-4 p-4 border-uninav-secondary border-l-4 rounded-lg">
+            <p className="text-gray-600 text-sm">
+              <span className="font-bold">Source:</span>{" "}
+              <a
+                href="https://businessday.ng/editorial/article/n-assemblys-200-new-varsities-dream-amid-lecturers-shortage/"
+                className="text-uninav-primary hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Businessday NG, Published March 24, 2025
               </a>
             </p>
           </div>
-          
-          <div className="p-4 bg-uninav-light rounded-lg">
+
+          <div className="bg-uninav-light p-4 rounded-lg">
             <p className="text-gray-700">
-              <span className="font-bold">Key Insight:</span> This significant disparity between the number of students 
-              seeking admission and the available slots highlights a crucial pain point: students often struggle 
-              to access necessary academic resources and peer support networks within the existing university structures. 
-              UniNav directly addresses this gap by providing a centralized platform for resource sharing, collaboration, 
-              and access to valuable peer insights, creating a substantial market opportunity across all 283 universities 
-              and the large student population they serve. By streamlining access to materials and fostering a supportive 
-              community, UniNav can become an indispensable tool for a vast number of Nigerian university students.
+              <span className="font-bold">Key Insight:</span> This disparity
+              highlights students' struggle for academic resources and peer
+              support. UniNav addresses this by centralizing resource sharing
+              and collaboration, serving a vast market across Nigeria's
+              universities.
             </p>
           </div>
         </div>
-        
-        <h3 className="text-2xl font-semibold text-center text-uninav-primary mb-6">Revenue Streams</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+
+        <h3 className="mb-6 font-semibold text-uninav-primary text-2xl text-center">
+          Revenue Streams
+        </h3>
+        <div className="gap-6 grid grid-cols-1 md:grid-cols-3 mb-16">
           <div className="feature-card">
-            <div className="text-3xl mb-4 text-uninav-accent">📢</div>
-            <h4 className="text-xl font-semibold text-uninav-dark mb-2">Native Ads</h4>
+            <div className="mb-4 text-uninav-accent text-3xl">📢</div>
+            <h4 className="mb-2 font-semibold text-uninav-dark text-xl">
+              Native Ads
+            </h4>
             <p className="text-gray-600">
-              An opportunity for students to display more adverts per material they publish, and to replace an advertisement 
-              for a material (note that currently we offer 1 free advert per material, after which they can't remove the advert 
-              only reupload another material). This will be especially useful during student campaigns for more political awareness 
-              of candidates.
+              Students can pay to display more ads per material or replace
+              existing ones—ideal for student campaigns needing wider political
+              awareness. (Currently: 1 free ad/material, non-replaceable).
             </p>
           </div>
-          
+
           <div className="feature-card">
-            <div className="text-3xl mb-4 text-uninav-accent">⭐</div>
-            <h4 className="text-xl font-semibold text-uninav-dark mb-2">Premium Features</h4>
+            <div className="mb-4 text-uninav-accent text-3xl">⭐</div>
+            <h4 className="mb-2 font-semibold text-uninav-dark text-xl">
+              Premium Features
+            </h4>
             <p className="text-gray-600">
-              Premium features that would also be paid for by interested students. With lots of data of materials and blogs, 
-              UniNav will create enhanced services such as inbuilt PDF reader with AI support for answering questions right within 
-              the editor on the go, sticky notes within editor, generating quick quizzes for a specific course, AI-powered study plans, 
-              and advanced analytics on study progress.
+              Paid enhancements like an in-app PDF reader with AI Q&A, sticky
+              notes, quiz generation, AI study plans, and advanced progress
+              analytics.
             </p>
           </div>
-          
+
           <div className="feature-card">
-            <div className="text-3xl mb-4 text-uninav-accent">🎯</div>
-            <h4 className="text-xl font-semibold text-uninav-dark mb-2">Targeted Ads & Sponsors</h4>
+            <div className="mb-4 text-uninav-accent text-3xl">🎯</div>
+            <h4 className="mb-2 font-semibold text-uninav-dark text-xl">
+              Targeted Ads & Sponsors
+            </h4>
             <p className="text-gray-600">
-              This will feature certain organizations' ads right within some search results, to provide better awareness and 
-              visibility for businesses and event organizers. Partners can include student-focused businesses, educational 
-              service providers, campus events, and career opportunities that align with student interests.
+              Organizations can feature ads in search results for better
+              visibility. Partners include student-focused businesses,
+              educational services, and event organizers.
             </p>
           </div>
         </div>
-        
-        <h3 className="text-2xl font-semibold text-center text-uninav-primary mb-6">Financial Projection</h3>
-        <div className="bg-white rounded-xl shadow-md p-6">
-          <div className="h-80 mb-6">
+
+        <h3 className="mb-6 font-semibold text-uninav-primary text-2xl text-center">
+          Financial Projection
+        </h3>
+        <div className="bg-white shadow-md p-6 rounded-xl">
+          <div className="mb-6 h-80">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
                 data={financialData}
@@ -116,54 +140,88 @@ const BusinessModel: React.FC = () => {
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="year" />
                 <YAxis />
-                <Tooltip 
-                  formatter={(value) => [`₦${value.toLocaleString()}`, undefined]}
+                <Tooltip
+                  formatter={(value) => [
+                    `₦${value.toLocaleString()}`,
+                    undefined,
+                  ]}
                   labelFormatter={(label) => `Year: ${label}`}
                 />
                 <Legend />
-                <Bar dataKey="nativeAds" name="Native Ads Revenue" fill="#4F46E5" />
+                <Bar
+                  dataKey="nativeAds"
+                  name="Native Ads Revenue"
+                  fill="#4F46E5"
+                />
                 <Bar dataKey="premium" name="Premium Features" fill="#9B87F5" />
                 <Bar dataKey="targetedAds" name="Targeted Ads" fill="#F97316" />
               </BarChart>
             </ResponsiveContainer>
           </div>
-          
+
           <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
+            <table className="divide-y divide-gray-200 min-w-full">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Year</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Users</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Native Ads</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Premium Features</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Targeted Ads</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Revenue</th>
+                  <th className="px-6 py-3 font-medium text-gray-500 text-xs text-left uppercase tracking-wider">
+                    Year
+                  </th>
+                  <th className="px-6 py-3 font-medium text-gray-500 text-xs text-left uppercase tracking-wider">
+                    Users
+                  </th>
+                  <th className="px-6 py-3 font-medium text-gray-500 text-xs text-left uppercase tracking-wider">
+                    Native Ads
+                  </th>
+                  <th className="px-6 py-3 font-medium text-gray-500 text-xs text-left uppercase tracking-wider">
+                    Premium Features
+                  </th>
+                  <th className="px-6 py-3 font-medium text-gray-500 text-xs text-left uppercase tracking-wider">
+                    Targeted Ads
+                  </th>
+                  <th className="px-6 py-3 font-medium text-gray-500 text-xs text-left uppercase tracking-wider">
+                    Total Revenue
+                  </th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {financialData.map((item, index) => (
                   <tr key={index}>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{item.year}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.users}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₦{item.nativeAds.toLocaleString()}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₦{item.premium.toLocaleString()}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₦{item.targetedAds.toLocaleString()}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-medium">₦{item.total.toLocaleString()}</td>
+                    <td className="px-6 py-4 font-medium text-gray-900 text-sm whitespace-nowrap">
+                      {item.year}
+                    </td>
+                    <td className="px-6 py-4 text-gray-500 text-sm whitespace-nowrap">
+                      {item.users}
+                    </td>
+                    <td className="px-6 py-4 text-gray-500 text-sm whitespace-nowrap">
+                      ₦{item.nativeAds.toLocaleString()}
+                    </td>
+                    <td className="px-6 py-4 text-gray-500 text-sm whitespace-nowrap">
+                      ₦{item.premium.toLocaleString()}
+                    </td>
+                    <td className="px-6 py-4 text-gray-500 text-sm whitespace-nowrap">
+                      ₦{item.targetedAds.toLocaleString()}
+                    </td>
+                    <td className="px-6 py-4 font-medium text-gray-900 text-sm whitespace-nowrap">
+                      ₦{item.total.toLocaleString()}
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          
-          <div className="mt-6 text-sm text-gray-500">
+
+          <div className="mt-6 text-gray-500 text-sm">
             <p>
-              <span className="font-semibold">2025:</span> 1,000 users with approximately 10% (100 users) purchasing native ads at ₦2,000 each.
+              <span className="font-semibold">2025:</span> 1K users, 10% (100)
+              buy native ads (₦2K each).
             </p>
             <p>
-              <span className="font-semibold">2026:</span> 2,000 users with 200 native ads purchases, 200 premium subscriptions at ₦1,000/month, and 200 targeted ads at ₦5,000 each.
+              <span className="font-semibold">2026:</span> 2K users, 200 native
+              ads, 200 premium subs (₦1K/mo), 200 targeted ads (₦5K each).
             </p>
             <p>
-              <span className="font-semibold">2027:</span> 3,000 users with 300 native ads purchases, 300 premium subscriptions, and 400 targeted ads.
+              <span className="font-semibold">2027:</span> 3K users, 300 native
+              ads, 300 premium subs, 400 targeted ads.
             </p>
           </div>
         </div>

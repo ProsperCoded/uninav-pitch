@@ -1,73 +1,61 @@
-# Welcome to your Lovable project
+## **Overview**
 
-## Project info
+**UniNav** is a collaborative **university study materials platform** that allows students to **upload, share, and access essential course-related resources** organized by faculty and department. It simplifies academic material discovery, enhances collaboration, and enables students to contribute to a growing knowledge base.
 
-**URL**: https://lovable.dev/projects/9b92d8e3-957d-49c1-bc3e-772a5f5c84d4
+Unlike traditional resource-sharing methods, **UniNav integrates a structured storage system, real-time updates, and monetization opportunities** , ensuring a seamless user experience.
 
-## How can I edit this code?
+Students are not just consumers but active contributors, uploading study materials. This fosters a community-driven approach where current and past students can help each other by making valuable resources available to everyone in their department or course.
 
-There are several ways of editing your application.
+By leveraging these shared materials and integrating a recommendation algorithm, the platform provides personalized suggestions based on a user’s academic profile, interests, and the materials explored by students in similar courses. This ensures that new students, or those transitioning to new levels, can quickly familiarize themselves with the required study materials, eliminating the hassle of searching for resources during the critical first weeks of the semester.
 
-**Use Lovable**
+### **🔑 Key Features**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9b92d8e3-957d-49c1-bc3e-772a5f5c84d4) and start prompting.
+#### **📂 Organized Study Resources**
 
-Changes made via Lovable will be committed automatically to this repo.
+- Materials are categorized by **Faculty, Department, and Level** , making it easy to find relevant study resources.
+- Advanced **search and filtering** capabilities allow students to quickly locate materials.
 
-**Use your preferred IDE**
+#### **🧠 Recommendations Engine**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- The platform provides **tailored recommendations** based on:
+  - User profile & academic interests
+  - Exploration patterns of similar students
+  - Most accessed and high-rated materials
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+#### **📚 Course Material Access**
 
-Follow these steps:
+- Students can **search for and download materials** categorized by **Faculty, Department, and Course.**
+- Available resources include:
+  - **Course outlines**
+  - **Schemes of work**
+  - **Past exam questions**
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+#### **📦 Efficient & Cost-Effective Storage**
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- **Backblaze B2 Cloud Storage** is now used for hosting **PDF materials, blog images, and ads** instead of Google Drive.
+- Files are securely stored and downloadable based on **role-based access** permissions.
 
-# Step 3: Install the necessary dependencies.
-npm i
+#### **👥 Role-Based Access & User Interaction**
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+- **Students** : Can upload, download, and engage with materials.
+- **Moderators** : Review and approve materials to ensure quality.
+- **Admins** : Oversee platform activity, manage users, and enforce policies.
 
-**Edit a file directly in GitHub**
+#### **💰 Monetization & Community Engagement**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **Blog System** : Students can write articles (e.g., registration guides, study tips) and earn from likes.
+- **Ad Management** : Users and organizations can place **paid ads** for visibility.
+- **Boosted Materials** : Users can pay to feature their materials for greater reach.
 
-**Use GitHub Codespaces**
+#### **🔔 Notifications & Reporting**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- Real-time notifications for **approvals, uploads, reports, and earnings.**
+- A **report system** for flagging inappropriate or misleading materials.
 
-## What technologies are used for this project?
+### **🚀 Why UniNav?**
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/9b92d8e3-957d-49c1-bc3e-772a5f5c84d4) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+✅ **Structured & Reliable** – No more scattered Google Drive links; everything is in one place.
+✅ **Smart Recommendations** – Get relevant materials tailored to your academic needs.
+✅ **Affordable Storage Solution** – Using **Backblaze B2** ensures cost-effective hosting.
+✅ **Fair Monetization** – Earn from contributions, blogs, and ads.
+✅ **Community-Centric** – Built to enhance student collaboration and academic success.
