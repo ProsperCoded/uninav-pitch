@@ -119,57 +119,63 @@
   }
   
   .gradient-bg {
-    @apply bg-gradient-to-br from-uninav-primary to-uninav-secondary;
+    @apply bg-gradient-to-br from-[#222959] via-[#3D4780] to-[#3399FF];
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-uninav-primary to-uninav-secondary bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[#222959] to-[#3399FF] bg-clip-text text-transparent;
   }
   
   .primary-button {
-    @apply bg-uninav-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-uninav-primary/90 transition-colors;
+    @apply bg-[#3399FF] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#3399FF]/90 transition-colors;
   }
   
   .secondary-button {
-    @apply border-2 border-uninav-primary text-uninav-primary px-6 py-3 rounded-lg font-medium hover:bg-uninav-primary/10 transition-colors;
+    @apply border-2 border-[#3399FF] text-[#3399FF] px-6 py-3 rounded-lg font-medium hover:bg-[#3399FF]/10 transition-colors;
   }
   
   .feature-card {
-    @apply p-6 rounded-xl shadow-md bg-white border border-gray-100 hover:border-uninav-secondary transition-all duration-300 hover:shadow-xl;
+    @apply p-6 rounded-xl shadow-md bg-white border border-gray-100 hover:border-[#3399FF] transition-all duration-300 hover:shadow-xl;
   }
   
   .problem-card {
-    @apply p-6 rounded-xl bg-white shadow-md border-l-4 border-uninav-primary hover:shadow-xl transition-shadow;
+    @apply p-6 rounded-xl bg-white shadow-md border-l-4 border-[#222959] hover:shadow-xl transition-shadow;
   }
   
   .solution-card {
-    @apply p-6 rounded-xl bg-white shadow-md border-l-4 border-uninav-accent hover:shadow-xl transition-shadow;
+    @apply p-6 rounded-xl bg-white shadow-md border-l-4 border-[#FF9900] hover:shadow-xl transition-shadow;
   }
   
   .step-card {
-    @apply p-5 rounded-lg bg-white shadow-md border border-gray-100 hover:border-uninav-secondary transition-all duration-300 hover:shadow-xl;
+    @apply p-5 rounded-lg bg-white shadow-md border border-gray-100 hover:border-[#3399FF] transition-all duration-300 hover:shadow-xl;
   }
   
   .roadmap-item {
-    @apply relative pl-8 pb-8 border-l-2 border-uninav-secondary ml-4;
+    @apply relative pl-8 pb-8 border-l-2 border-[#3399FF] ml-4;
   }
   
   .roadmap-item:before {
-    @apply content-[''] absolute w-4 h-4 rounded-full bg-uninav-secondary -left-[9px] top-0;
+    @apply content-[''] absolute w-4 h-4 rounded-full bg-[#3399FF] -left-[9px] top-0;
   }
   
   .roadmap-item:last-child {
     @apply border-l-0;
   }
 
+  /* Fix for animation issue - ensure elements stay visible after animation */
   .animate-in {
-    @apply opacity-100 translate-y-0;
+    @apply opacity-100 translate-y-0 !important;
+  }
+  
+  /* Add a transition for the animate-in class */
+  .animate-on-scroll {
+    @apply transition-all duration-700 ease-out will-change-transform;
   }
 }
 
 @layer utilities {
   .animated-gradient {
-    background: linear-gradient(270deg, #4F46E5, #9B87F5, #F97316);
+    background: linear-gradient(270deg, #222959, #3399FF, #FF9900);
     background-size: 600% 600%;
     animation: gradient-animation 8s ease infinite;
   }
@@ -186,7 +192,20 @@
   }
 
   .glassmorphism {
-    @apply backdrop-blur-md bg-white/10 border border-white/30;
+    @apply backdrop-blur-md bg-white/10 border border-white/30 shadow-lg;
+  }
+
+  /* Additional glassmorphism styles based on theme colors */
+  .glassmorphism-primary {
+    @apply backdrop-blur-md bg-[#222959]/10 border border-[#222959]/30;
+  }
+  
+  .glassmorphism-secondary {
+    @apply backdrop-blur-md bg-[#3399FF]/10 border border-[#3399FF]/30;
+  }
+  
+  .glassmorphism-accent {
+    @apply backdrop-blur-md bg-[#FF9900]/10 border border-[#FF9900]/30;
   }
 }
 
@@ -247,6 +266,10 @@
   animation: bounce 3s infinite;
 }
 
+.animate-pulse-slow {
+  animation: pulse 4s infinite;
+}
+
 @keyframes bounce {
   0%, 100% {
     transform: translateY(-5%);
@@ -257,3 +280,14 @@
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
+
+/* Add this to help debug animations - uncomment if needed */
+/* 
+.animate-on-scroll {
+  border: 2px solid red;
+}
+
+.animate-in {
+  border: 2px solid green;
+}
+*/

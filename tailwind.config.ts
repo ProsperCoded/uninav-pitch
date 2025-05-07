@@ -54,11 +54,12 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				uninav: {
-					primary: '#4F46E5',
-					secondary: '#9B87F5',
-					accent: '#F97316',
-					light: '#E5DEFF',
-					dark: '#221F26',
+					primary: '#222959',    // Dark blue from image
+					secondary: '#3399FF',  // Blue from image
+					accent: '#FF9900',     // Orange from image
+					green: '#00B33C',      // Green from image
+					light: '#E5DEFF',      // Light color for backgrounds
+					dark: '#221F26',       // Dark color for text
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
