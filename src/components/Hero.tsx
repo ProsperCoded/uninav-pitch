@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
         <div className="top-1/4 right-1/4 absolute bg-[#00B33C]/5 blur-2xl rounded-full w-40 h-40 animate-pulse-slow"></div>
       </div>
 
-      <div className="z-10 relative mx-auto container">
+      <div className="z-10 relative px-6 md:px-12 lg:px-24 w-full">
         <div className="items-center gap-12 grid grid-cols-1 lg:grid-cols-2">
           <div className="space-y-8 animate-fade-in">
             <h1 className="font-bold text-white text-4xl md:text-5xl lg:text-6xl leading-tight">
@@ -56,13 +56,19 @@ const Hero: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button className="group bg-[#FF9900] hover:bg-[#FF9900]/90 px-6 py-6 h-auto text-white primary-button hover-scale">
+              <Button
+                className="group bg-[#FF9900] hover:bg-[#FF9900]/90 px-6 py-3 h-auto text-white primary-button hover-scale"
+                onClick={() => window.open("https://uninav.live", "_blank")}
+              >
                 Get Started
                 <ArrowRight className="ml-1 transition-transform group-hover:translate-x-1 duration-300" />
               </Button>
               <Button
                 variant="outline"
                 className="bg-white/10 hover:bg-white/20 px-6 py-6 border-white h-auto text-white secondary-button hover-scale"
+                onClick={() =>
+                  window.open("https://uninav.live/about", "_blank")
+                }
               >
                 Learn More
                 <ChevronRight className="ml-1 transition-transform group-hover:translate-x-1 duration-300" />
@@ -75,7 +81,7 @@ const Hero: React.FC = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-[#222959] to-[#3399FF] opacity-40 rounded-2xl animate-pulse blur"></div>
               <div className="relative bg-white/90 shadow-2xl backdrop-blur-sm p-3 rounded-2xl">
                 <img
-                  src="/placeholder.svg"
+                  src="/dashboard-laptop.png"
                   alt="UNINAV Dashboard"
                   className="shadow-lg rounded-xl w-full h-auto"
                 />
