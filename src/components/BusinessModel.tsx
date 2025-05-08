@@ -15,10 +15,10 @@ const BusinessModel: React.FC = () => {
     {
       year: "2025",
       users: 1000,
-      nativeAds: 100 * 2000,
+      nativeAds: 50 * 2000,
       premium: 0,
       targetedAds: 0,
-      total: 100 * 2000,
+      total: 50 * 2000,
     },
     {
       year: "2026",
@@ -207,7 +207,7 @@ const BusinessModel: React.FC = () => {
 
           <div className="mt-6 text-gray-500 text-sm">
             <p>
-              <span className="font-semibold">2025:</span> 1K users; 10% (100)
+              <span className="font-semibold">2025:</span> 1K users; 5% (50)
               buy native ads (₦2K ea).
             </p>
             <p>
