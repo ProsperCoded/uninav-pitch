@@ -1,0 +1,293 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 250 92% 58%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 260 80% 75%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 24 94% 53%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 250 92% 58%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 260 80% 75%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 24 94% 53%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins antialiased overflow-x-hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat font-bold;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl mb-6 relative;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl lg:text-3xl mb-4;
+  }
+}
+
+@layer components {
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  .card-shadow {
+    @apply shadow-md hover:shadow-xl transition-shadow duration-300;
+  }
+  
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+  
+  .section-padding {
+    @apply py-20 px-4 md:px-8 lg:px-12;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-br from-[#222959] via-[#3D4780] to-[#3399FF];
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-[#222959] to-[#3399FF] bg-clip-text text-transparent;
+  }
+  
+  .primary-button {
+    @apply bg-[#3399FF] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#3399FF]/90 transition-colors;
+  }
+  
+  .secondary-button {
+    @apply border-2 border-[#3399FF] text-[#3399FF] px-6 py-3 rounded-lg font-medium hover:bg-[#3399FF]/10 transition-colors;
+  }
+  
+  .feature-card {
+    @apply p-6 rounded-xl shadow-md bg-white border border-gray-100 hover:border-[#3399FF] transition-all duration-300 hover:shadow-xl;
+  }
+  
+  .problem-card {
+    @apply p-6 rounded-xl bg-white shadow-md border-l-4 border-[#222959] hover:shadow-xl transition-shadow;
+  }
+  
+  .solution-card {
+    @apply p-6 rounded-xl bg-white shadow-md border-l-4 border-[#FF9900] hover:shadow-xl transition-shadow;
+  }
+  
+  .step-card {
+    @apply p-5 rounded-lg bg-white shadow-md border border-gray-100 hover:border-[#3399FF] transition-all duration-300 hover:shadow-xl;
+  }
+  
+  .roadmap-item {
+    @apply relative pl-8 pb-8 border-l-2 border-[#3399FF] ml-4;
+  }
+  
+  .roadmap-item:before {
+    @apply content-[''] absolute w-4 h-4 rounded-full bg-[#3399FF] -left-[9px] top-0;
+  }
+  
+  .roadmap-item:last-child {
+    @apply border-l-0;
+  }
+
+  /* Fix for animation issue - ensure elements stay visible after animation */
+  .animate-in {
+    @apply opacity-100 translate-y-0 !important;
+  }
+  
+  /* Add a transition for the animate-in class */
+  .animate-on-scroll {
+    @apply transition-all duration-700 ease-out will-change-transform;
+  }
+}
+
+@layer utilities {
+  .animated-gradient {
+    background: linear-gradient(270deg, #222959, #3399FF, #FF9900);
+    background-size: 600% 600%;
+    animation: gradient-animation 8s ease infinite;
+  }
+
+  .text-outline {
+    text-shadow: -1px -1px 0 rgba(255,255,255,0.15), 
+                 1px -1px 0 rgba(255,255,255,0.15), 
+                 -1px 1px 0 rgba(255,255,255,0.15), 
+                 1px 1px 0 rgba(255,255,255,0.15);
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .glassmorphism {
+    @apply backdrop-blur-md bg-white/10 border border-white/30 shadow-lg;
+  }
+
+  /* Additional glassmorphism styles based on theme colors */
+  .glassmorphism-primary {
+    @apply backdrop-blur-md bg-[#222959]/10 border border-[#222959]/30;
+  }
+  
+  .glassmorphism-secondary {
+    @apply backdrop-blur-md bg-[#3399FF]/10 border border-[#3399FF]/30;
+  }
+  
+  .glassmorphism-accent {
+    @apply backdrop-blur-md bg-[#FF9900]/10 border border-[#FF9900]/30;
+  }
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes float-delayed {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.03);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 7s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce 3s infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-5%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+/* Add this to help debug animations - uncomment if needed */
+/* 
+.animate-on-scroll {
+  border: 2px solid red;
+}
+
+.animate-in {
+  border: 2px solid green;
+}
+*/
